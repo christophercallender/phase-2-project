@@ -3,6 +3,8 @@ import { NavLink, useNavigate, Outlet } from 'react-router-dom';
 import applecore from './media/Apple Core.png';
 import applecoregif from './media/Apple Core.gif';
 import applecoregifdark from './media/Apple Core dark.gif';
+import cartgray from './media/cart-gray.png';
+import cartwhite from './media/cart-white.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container } from 'react-bootstrap';
 
@@ -27,6 +29,7 @@ export default function App() {
                <NavLink to="/routes/AppleCore">
                   <img src={applecore} width={20} alt={'apple core logo'} />
                </NavLink>
+               &nbsp;
                <NavLink style={navStyle} to="/routes/Mac">
                   Mac
                </NavLink>
@@ -57,12 +60,14 @@ export default function App() {
                <NavLink style={navStyle} to="/routes/SignIn">
                   Sign In
                </NavLink>
+               &nbsp;
                <input
                   type="text"
                   placeholder="Search..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                />
+               &nbsp;
                <NavLink style={navStyle} to="/routes/Price">
                   $
                </NavLink>
@@ -79,6 +84,17 @@ export default function App() {
                >
                   💡
                </button>
+               <NavLink style={navStyle} to="/routes/Cart">
+                  <img
+                     src={
+                        window.location.pathname === '/routes/Cart'
+                           ? cartwhite
+                           : cartgray
+                     }
+                     width={20}
+                     alt={'cart logo'}
+                  />
+               </NavLink>
             </Container>
          </Navbar>
          <Container>

@@ -15,6 +15,7 @@ import SignUp from './routes/SignUp';
 import SignIn from './routes/SignIn';
 import Price from './routes/Price';
 import Hearts from './routes/Hearts';
+import Cart from './routes/Cart';
 import SignedUp from './routes/SignedUp';
 import SignedIn from './routes/SignedIn';
 
@@ -35,6 +36,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/routes/SignIn" element={<SignIn />} />
             <Route path="/routes/Price" element={<Price />} />
             <Route path="/routes/Hearts" element={<Hearts />} />
+            <Route path="/routes/Cart" element={<Cart />} />
             <Route path="/routes/SignedUp" element={<SignedUp />} />
             <Route path="/routes/SignedIn" element={<SignedIn />} />
          </Route>

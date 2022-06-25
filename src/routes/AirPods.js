@@ -3,7 +3,6 @@ import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 export default function AirPods() {
    const [products, setProducts] = useState([]);
-   const [inCart, setInCart] = useState(false);
    const [rerender, setRerender] = useState(false);
 
    useEffect(() => {
@@ -12,6 +11,29 @@ export default function AirPods() {
          .then((data) => setProducts(data));
    }, [rerender]);
 
+   function handleHeart(product) {
+      fetch(`http://localhost:3000/products/${product.id}`, {
+         method: 'PATCH',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({
+            heart: !product.heart,
+         }),
+      }).then(setRerender(!rerender));
+   }
+
+   function handleAddToCart(product) {
+      fetch(`http://localhost:3000/products/${product.id}`, {
+         method: 'PATCH',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({
+            inCart: !product.inCart,
+         }),
+      }).then(setRerender(!rerender));
+   }
    return (
       <Container fluid align="center">
          <Row sm={1} md={2} lg={3}>
@@ -30,32 +52,22 @@ export default function AirPods() {
                            <Card.Text>{product.model}</Card.Text>
                            <Card.Text
                               style={{ cursor: 'pointer' }}
-                              onClick={() =>
-                                 fetch(
-                                    `http://localhost:3000/products/${product.id}`,
-                                    {
-                                       method: 'PATCH',
-                                       headers: {
-                                          'Content-Type': 'application/json',
-                                       },
-                                       body: JSON.stringify({
-                                          heart: !product.heart,
-                                       }),
-                                    }
-                                 ).then(setRerender(!rerender))
-                              }
+                              onClick={() => handleHeart(product)}
                            >
-                              {product.heart === false ? '♡' : '♥'}
+                              {product.heart ? '♥' : '♡'}
                            </Card.Text>
                         </Container>
                         <Container className="d-flex justify-content-between">
                            <Card.Text>{product.price}</Card.Text>
                            <Button
-                              variant="outline-secondary"
-                              type="submit"
-                              // onClick={(e) => handleSubmit(e)}
+                              variant={
+                                 product.inCart
+                                    ? 'primary'
+                                    : 'outline-secondary'
+                              }
+                              onClick={() => handleAddToCart(product)}
                            >
-                              {inCart ? 'In Cart' : 'Add to Cart'}
+                              {product.inCart ? 'In Cart' : 'Add to Cart'}
                            </Button>
                         </Container>
                      </Card>
