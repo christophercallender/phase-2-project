@@ -25,7 +25,11 @@ export default function App() {
    });
 
    return (
-      <div>
+      <div
+         style={{
+            background: mode === 'light' ? 'white' : 'black',
+         }}
+      >
          <Navbar bg="dark" expand="sm-md-lg">
             <Container>
                <NavLink to="/routes/AppleCore">
@@ -118,10 +122,6 @@ export default function App() {
                      alt={'dark mode apple core gif'}
                   />
                )}
-               {
-                  (document.body.style.backgroundColor =
-                     mode === 'light' ? 'white' : 'black')
-               }
             </div>
          </Container>
          <Outlet />

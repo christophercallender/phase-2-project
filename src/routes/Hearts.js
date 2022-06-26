@@ -37,6 +37,9 @@ export default function Hearts() {
 
    return (
       <Container fluid align="center">
+         <br />
+         <p className="display-6 text-center">Favorites List</p>
+         <br />
          <Row sm={1} md={2} lg={3}>
             {products
                .filter((product) => product.heart === true)

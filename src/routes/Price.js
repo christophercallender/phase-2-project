@@ -45,6 +45,9 @@ export default function Price() {
 
    return (
       <Container fluid align="center">
+         <br />
+         <p className="display-6 text-center">Sorted By Price</p>
+         <br />
          <Row sm={1} md={2} lg={3}>
             {products.map((product) => (
                <Col key={product.id}>

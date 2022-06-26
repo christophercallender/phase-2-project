@@ -247,8 +247,8 @@
       "details": "Apple-designed dynamic driver, Active Noise Cancellation, Transparency mode, Spatial audio with dynamic head tracking, Adaptive EQ",
       "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-spacegray-202011?wid=470&hei=556&fmt=png-alpha&.v=1604709508000",
       "price": "$549",
-      "heart": false,
-      "inCart": false
+      "heart": true,
+      "inCart": true
     },
     {
       "id": 26,
