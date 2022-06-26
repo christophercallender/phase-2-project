@@ -41,7 +41,7 @@ export default function Cart() {
          <br />
          <p className="display-6 text-center">Shopping Cart</p>
          <br />
-         <Row sm={1} md={1} lg={1}>
+         <Row sm={1} md={2} lg={3}>
             {products
                .filter((product) => product.inCart === true)
                .map((product) => (
