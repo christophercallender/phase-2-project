@@ -63,7 +63,7 @@ export default function Hearts() {
                            <Button
                               variant={
                                  product.inCart
-                                    ? 'primary'
+                                    ? 'secondary'
                                     : 'outline-secondary'
                               }
                               onClick={() => handleAddToCart(product)}

@@ -61,7 +61,7 @@ export default function AppleCore() {
                         <Card.Text>{product.price}</Card.Text>
                         <Button
                            variant={
-                              product.inCart ? 'primary' : 'outline-secondary'
+                              product.inCart ? 'secondary' : 'outline-secondary'
                            }
                            onClick={() => handleAddToCart(product)}
                         >

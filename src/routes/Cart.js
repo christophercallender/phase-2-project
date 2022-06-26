@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
+import amazonbutton from '../media/amazonbutton.png';
 
 export default function Cart() {
    const [products, setProducts] = useState([]);
@@ -37,7 +38,10 @@ export default function Cart() {
 
    return (
       <Container fluid align="center">
-         <Row sm={1} md={2} lg={3}>
+         <br />
+         <p className="display-6 text-center">Shopping Cart</p>
+         <br />
+         <Row sm={1} md={1} lg={1}>
             {products
                .filter((product) => product.inCart === true)
                .map((product) => (
@@ -49,6 +53,7 @@ export default function Cart() {
                         />
                         <br />
                         <Container className="d-flex justify-content-between">
+                           <Card.Text>{product.price}</Card.Text>
                            <Card.Title>{product.title}</Card.Title>
                            <Card.Text>{product.model}</Card.Text>
                            <Card.Text
@@ -59,16 +64,25 @@ export default function Cart() {
                            </Card.Text>
                         </Container>
                         <Container className="d-flex justify-content-between">
-                           <Card.Text>{product.price}</Card.Text>
+                           <a
+                              href={`https://www.amazon.com/s?k=${
+                                 product.title + product.model
+                              }`}
+                              target="_blank"
+                              rel="noreferrer"
+                           >
+                              <img
+                                 src={amazonbutton}
+                                 alt="amazon button"
+                                 width="100%"
+                              />
+                           </a>
+                           &nbsp;&nbsp;&nbsp;
                            <Button
-                              variant={
-                                 product.inCart
-                                    ? 'primary'
-                                    : 'outline-secondary'
-                              }
+                              variant="outline-secondary"
                               onClick={() => handleAddToCart(product)}
                            >
-                              {product.inCart ? 'In Cart' : 'Add to Cart'}
+                              {product.inCart ? 'Remove' : 'Add to Cart'}
                            </Button>
                         </Container>
                      </Card>

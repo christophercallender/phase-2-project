@@ -67,7 +67,7 @@ export default function TVandHome() {
                            <Button
                               variant={
                                  product.inCart
-                                    ? 'primary'
+                                    ? 'secondary'
                                     : 'outline-secondary'
                               }
                               onClick={() => handleAddToCart(product)}

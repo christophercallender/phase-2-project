@@ -3,8 +3,10 @@ import { NavLink, useNavigate, Outlet } from 'react-router-dom';
 import applecore from './media/Apple Core.png';
 import applecoregif from './media/Apple Core.gif';
 import applecoregifdark from './media/Apple Core dark.gif';
-import cartgray from './media/cart-gray.png';
-import cartwhite from './media/cart-white.png';
+import cartgray from './media/cartgray.png';
+import cartwhite from './media/cartwhite.png';
+import darkbutton from './media/darkbutton.png';
+import lightbutton from './media/lightbutton.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container } from 'react-bootstrap';
 
@@ -74,16 +76,6 @@ export default function App() {
                <NavLink style={navStyle} to="/routes/Hearts">
                   ♥
                </NavLink>
-               <button
-                  style={{
-                     border: 'none',
-                     background: 'none',
-                     cursor: 'pointer',
-                  }}
-                  onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
-               >
-                  💡
-               </button>
                <NavLink style={navStyle} to="/routes/Cart">
                   <img
                      src={
@@ -92,9 +84,23 @@ export default function App() {
                            : cartgray
                      }
                      width={20}
-                     alt={'cart logo'}
+                     alt={'cart button'}
                   />
                </NavLink>
+               <button
+                  style={{
+                     border: 'none',
+                     background: 'none',
+                     cursor: 'pointer',
+                  }}
+                  onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+               >
+                  <img
+                     src={mode === 'light' ? lightbutton : darkbutton}
+                     width={20}
+                     alt={'darkmode button'}
+                  />
+               </button>
             </Container>
          </Navbar>
          <Container>
@@ -112,6 +118,10 @@ export default function App() {
                      alt={'dark mode apple core gif'}
                   />
                )}
+               {
+                  (document.body.style.backgroundColor =
+                     mode === 'light' ? 'white' : 'black')
+               }
             </div>
          </Container>
          <Outlet />
