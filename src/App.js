@@ -5,8 +5,8 @@ import applecoregif from './media/Apple Core.gif';
 import applecoregifdark from './media/Apple Core dark.gif';
 import cartgray from './media/cartgray.png';
 import cartwhite from './media/cartwhite.png';
-import darkbutton from './media/darkbutton.png';
-import lightbutton from './media/lightbutton.png';
+import buttondark from './media/buttondark.png';
+import buttonlight from './media/buttonlight.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container } from 'react-bootstrap';
 
@@ -100,7 +100,7 @@ export default function App() {
                   onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
                >
                   <img
-                     src={mode === 'light' ? lightbutton : darkbutton}
+                     src={mode === 'light' ? buttonlight : buttondark}
                      width={20}
                      alt={'darkmode button'}
                   />
