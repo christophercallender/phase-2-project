@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, Form, Button } from 'react-bootstrap';
 
 export default function SignIn() {
    const [username, setUsername] = useState('');
@@ -26,54 +25,64 @@ export default function SignIn() {
    }
 
    return (
-      <Container fluid align="center">
+      <div
+         className="jumbotron jumbotron-fluid bg-white text-dark p-1"
+         id="signupForm"
+      >
          <br />
-         <form>
-            <p className="display-6 text-center">Sign In</p>
-            <br />
-            <div className="form-group row justify-content-center">
-               <label for="Username" className="col-md-2 col-form-label">
-                  Username
-               </label>
-               <div className="col-md-4">
-                  <input
-                     type="text"
-                     className="form-control"
-                     id="Username"
-                     onChange={(e) => setUsername(e.target.value)}
-                  />
+         <div className="container">
+            <form>
+               <p className="display-6 text-center">Sign In</p>
+               <br />
+               <div className="form-group row justify-content-center">
+                  <label for="Username" className="col-md-2 col-form-label">
+                     Username
+                  </label>
+                  <div className="col-md-4">
+                     <input
+                        type="text"
+                        className="form-control"
+                        id="Username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                     />
+                  </div>
                </div>
-            </div>
-            <br />
-            <div className="form-group row justify-content-center">
-               <label for="Password" className="col-md-2 col-form-label">
-                  Password
-               </label>
-               <div className="col-md-4">
-                  <input
-                     type="Password"
-                     className="form-control"
-                     id="Password"
-                     onChange={(e) => setPassword(e.target.value)}
-                  />
+               <br />
+               <div className="form-group row justify-content-center">
+                  <label for="Password" className="col-md-2 col-form-label">
+                     Password
+                  </label>
+                  <div className="col-md-4">
+                     <input
+                        type="Password"
+                        className="form-control"
+                        id="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                     />
+                  </div>
                </div>
-            </div>
-            <br />
-            <div className="form-group row justify-content-center">
-               <label for="Submit" className="col-md-2 col-form-label"></label>
-               <div className="col-md-4">
-                  <button
-                     type="submit"
-                     className="btn btn-outline-secondary"
-                     onClick={(e) => handleSubmit(e)}
-                  >
-                     Submit
-                  </button>
+               <br />
+               <div className="form-group row justify-content-center">
+                  <label
+                     for="Submit"
+                     className="col-md-2 col-form-label"
+                  ></label>
+                  <div className="col-md-4">
+                     <button
+                        type="submit"
+                        className="btn btn-outline-secondary"
+                        onClick={(e) => handleSubmit(e)}
+                     >
+                        Submit
+                     </button>
+                  </div>
                </div>
-            </div>
-            <br />
-            <br />
-         </form>
-      </Container>
+               <br />
+               <br />
+            </form>
+         </div>
+      </div>
    );
 }
