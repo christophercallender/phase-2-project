@@ -53,7 +53,7 @@ export default function SignUp() {
                <p className="display-6 text-center">Sign Up</p>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="Username" className="col-md-2 col-form-label">
+                  <label htmlFor="Username" className="col-md-2 col-form-label">
                      Username
                   </label>
                   <div className="col-md-4">
@@ -67,7 +67,7 @@ export default function SignUp() {
                </div>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="Password" className="col-md-2 col-form-label">
+                  <label htmlFor="Password" className="col-md-2 col-form-label">
                      Password
                   </label>
                   <div className="col-md-4">
@@ -81,7 +81,7 @@ export default function SignUp() {
                </div>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="First" className="col-md-2 col-form-label">
+                  <label htmlFor="First" className="col-md-2 col-form-label">
                      First Name
                   </label>
                   <div className="col-md-4">
@@ -95,7 +95,7 @@ export default function SignUp() {
                </div>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="Last" className="col-md-2 col-form-label">
+                  <label htmlFor="Last" className="col-md-2 col-form-label">
                      Last Name
                   </label>
                   <div className="col-md-4">
@@ -109,7 +109,7 @@ export default function SignUp() {
                </div>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="Street" className="col-md-2 col-form-label">
+                  <label htmlFor="Street" className="col-md-2 col-form-label">
                      Street
                   </label>
                   <div className="col-md-4">
@@ -123,7 +123,7 @@ export default function SignUp() {
                </div>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="City" className="col-md-2 col-form-label">
+                  <label htmlFor="City" className="col-md-2 col-form-label">
                      City
                   </label>
                   <div className="col-md-4">
@@ -137,7 +137,7 @@ export default function SignUp() {
                </div>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="State" className="col-md-2 col-form-label">
+                  <label htmlFor="State" className="col-md-2 col-form-label">
                      State
                   </label>
                   <div className="col-md-4">
@@ -151,7 +151,7 @@ export default function SignUp() {
                </div>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="Zip" className="col-md-2 col-form-label">
+                  <label htmlFor="Zip" className="col-md-2 col-form-label">
                      Zip
                   </label>
                   <div className="col-md-4">
@@ -165,7 +165,7 @@ export default function SignUp() {
                </div>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="Email" className="col-md-2 col-form-label">
+                  <label htmlFor="Email" className="col-md-2 col-form-label">
                      Email
                   </label>
                   <div className="col-md-4">
@@ -179,7 +179,7 @@ export default function SignUp() {
                </div>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="Phone" className="col-md-2 col-form-label">
+                  <label htmlFor="Phone" className="col-md-2 col-form-label">
                      Phone
                   </label>
                   <div className="col-md-4">
@@ -194,7 +194,7 @@ export default function SignUp() {
                <br />
                <div className="form-group row justify-content-center">
                   <label
-                     for="Submit"
+                     htmlFor="Submit"
                      className="col-md-2 col-form-label"
                   ></label>
                   <div className="col-md-4">

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
    const [username, setUsername] = useState('');
    const [password, setPassword] = useState('');
    const [signedIn, setSignedIn] = useState(false);
-   const navigate = useNavigate();
+   // const navigate = useNavigate();
 
    function handleSubmit(e) {
       e.preventDefault();
@@ -20,8 +20,8 @@ export default function SignIn() {
       })
          .then((r) => r.json())
          .then((data) => setSignedIn(data.signedIn))
-         .then(console.log(signedIn))
-         .then(navigate('./SignedIn'));
+         .then(console.log(signedIn));
+      // .then(navigate('./SignedIn'));
    }
 
    return (
@@ -35,7 +35,7 @@ export default function SignIn() {
                <p className="display-6 text-center">Sign In</p>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="Username" className="col-md-2 col-form-label">
+                  <label htmlFor="Username" className="col-md-2 col-form-label">
                      Username
                   </label>
                   <div className="col-md-4">
@@ -50,7 +50,7 @@ export default function SignIn() {
                </div>
                <br />
                <div className="form-group row justify-content-center">
-                  <label for="Password" className="col-md-2 col-form-label">
+                  <label htmlFor="Password" className="col-md-2 col-form-label">
                      Password
                   </label>
                   <div className="col-md-4">
@@ -66,7 +66,7 @@ export default function SignIn() {
                <br />
                <div className="form-group row justify-content-center">
                   <label
-                     for="Submit"
+                     htmlFor="Submit"
                      className="col-md-2 col-form-label"
                   ></label>
                   <div className="col-md-4">
