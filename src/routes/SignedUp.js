@@ -13,7 +13,10 @@ export default function SignedUp({
 }) {
    return (
       <Container fluid align="center">
-         <h1>You have successfully signed up!</h1>
+         <br />
+         <p className="display-6 text-center">
+            You have successfully signed up!
+         </p>
          <br />
          <div style={{ width: '25%', textAlign: 'left' }}>
             <Table className="border-white">

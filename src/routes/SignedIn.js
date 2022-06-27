@@ -1,62 +1,15 @@
-import { Container, Table } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
-export default function SignedIn({
-   username,
-   first,
-   last,
-   street,
-   city,
-   state,
-   zip,
-   email,
-   phone,
-}) {
+export default function SignedIn({ first }) {
    return (
       <Container fluid align="center">
-         <h1>You have successfully signed up!</h1>
          <br />
-         <div style={{ width: '25%', textAlign: 'left' }}>
-            <Table className="border-white">
-               <tbody>
-                  <tr>
-                     <td>Username: </td>
-                     <td>{`${username}`}</td>
-                  </tr>
-                  <tr>
-                     <td>First: </td>
-                     <td>{`${first}`}</td>
-                  </tr>
-                  <tr>
-                     <td>Last: </td>
-                     <td>{`${last}`}</td>
-                  </tr>
-                  <tr>
-                     <td>Street: </td>
-                     <td>{`${street}`}</td>
-                  </tr>
-                  <tr>
-                     <td>City: </td>
-                     <td>{`${city}`}</td>
-                  </tr>
-                  <tr>
-                     <td>State: </td>
-                     <td>{`${state}`}</td>
-                  </tr>
-                  <tr>
-                     <td>Zip: </td>
-                     <td>{`${zip}`}</td>
-                  </tr>
-                  <tr>
-                     <td>Email: </td>
-                     <td>{`${email}`}</td>
-                  </tr>
-                  <tr>
-                     <td>Phone: </td>
-                     <td>{`${phone}`}</td>
-                  </tr>
-               </tbody>
-            </Table>
-         </div>
+         <p className="display-6 text-center">
+            You have successfully signed in!
+         </p>
+         <br />
+         <h2 className=" text-center">Welcome back, {first}!</h2>
+         <br />
       </Container>
    );
 }
