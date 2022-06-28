@@ -54,21 +54,7 @@ export default function SignUp() {
       })
          .then((r) => r.json())
          .then((data) => setUsers([...users, data]))
-         // .then(
-         //    console.log(
-         //       username,
-         //       password,
-         //       first,
-         //       last,
-         //       street,
-         //       city,
-         //       state,
-         //       zip,
-         //       email,
-         //       phone
-         //    )
-         // );
-         .then(navigate('./SignedUp'));
+         .then(navigate('/routes/SignedUp'));
    }
 
    return (

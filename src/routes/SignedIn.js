@@ -20,6 +20,12 @@ export default function SignedIn() {
          <br />
          <h2 className=" text-center">Welcome back, {first}!</h2>
          <br />
+         <br />
+         <br />
+         <br />
+         <br />
+         <br />
+         <br />
       </div>
    );
 }

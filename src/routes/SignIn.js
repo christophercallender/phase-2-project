@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { StateContext } from '../context';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,6 +14,11 @@ export default function SignIn() {
    } = useContext(StateContext);
    const navigate = useNavigate();
 
+   useEffect(() => {
+      setUsername('');
+      setPassword('');
+   }, []);
+
    function handleSubmit(e) {
       e.preventDefault();
       fetch(`http://localhost:3000/status/1`, {
@@ -27,8 +32,7 @@ export default function SignIn() {
       })
          .then((r) => r.json())
          .then((data) => setSignedIn(data.signedIn))
-         // .then(console.log(signedIn, username, password));
-         .then(navigate('./SignedIn'));
+         .then(navigate('/routes/SignedIn'));
    }
 
    return (
