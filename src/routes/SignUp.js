@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { StateContext } from '../context';
 import { v4 as uuid } from 'uuid';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,6 +15,7 @@ export default function SignUp() {
    const [zip, setZip] = useState('');
    const [email, setEmail] = useState('');
    const [phone, setPhone] = useState('');
+   const { mode } = useContext(StateContext);
    const navigate = useNavigate();
 
    function handleSubmit(e) {
@@ -39,12 +41,16 @@ export default function SignUp() {
       })
          .then((r) => r.json())
          .then((data) => setUsers([...users, data]))
-         .then(navigate('./SignedUp'));
+         .then(navigate('src/routes/SignedUp'));
    }
 
    return (
       <div
-         className="jumbotron jumbotron-fluid bg-white text-dark p-1"
+         className={
+            mode === 'light'
+               ? 'jumbotron jumbotron-fluid bg-white text-dark p-1'
+               : 'jumbotron jumbotron-fluid bg-black text-light p-1'
+         }
          id="signupForm"
       >
          <br />

@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { StateContext } from '../context';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 export default function Hearts() {
    const [products, setProducts] = useState([]);
-   const [rerender, setRerender] = useState(false);
+   const { search, mode, handleHeart, handleAddToCart, rerender } =
+      useContext(StateContext);
 
    useEffect(() => {
       fetch('http://localhost:3000/products')
@@ -11,37 +13,24 @@ export default function Hearts() {
          .then((data) => setProducts(data));
    }, [rerender]);
 
-   function handleHeart(product) {
-      fetch(`http://localhost:3000/products/${product.id}`, {
-         method: 'PATCH',
-         headers: {
-            'Content-Type': 'application/json',
-         },
-         body: JSON.stringify({
-            heart: !product.heart,
-         }),
-      }).then(setRerender(!rerender));
-   }
-
-   function handleAddToCart(product) {
-      fetch(`http://localhost:3000/products/${product.id}`, {
-         method: 'PATCH',
-         headers: {
-            'Content-Type': 'application/json',
-         },
-         body: JSON.stringify({
-            inCart: !product.inCart,
-         }),
-      }).then(setRerender(!rerender));
-   }
-
    return (
       <Container fluid align="center">
          <br />
-         <p className="display-6 text-center">Favorites List</p>
+         {mode === 'light' ? (
+            <p className="display-6 text-dark text-center">Favorites List</p>
+         ) : (
+            <p className="display-6 text-light text-center">Favorites List</p>
+         )}
          <br />
          <Row sm={1} md={2} lg={3}>
             {products
+               .filter(
+                  (product) =>
+                     product.title
+                        .toLowerCase()
+                        .includes(search.toLowerCase()) ||
+                     product.model.toLowerCase().includes(search.toLowerCase())
+               )
                .filter((product) => product.heart === true)
                .map((product) => (
                   <Col key={product.id}>

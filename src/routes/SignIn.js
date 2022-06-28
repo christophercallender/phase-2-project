@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { StateContext } from '../context';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
    const [username, setUsername] = useState('');
    const [password, setPassword] = useState('');
    const [signedIn, setSignedIn] = useState(false);
-   // const navigate = useNavigate();
+   const { mode } = useContext(StateContext);
+   const navigate = useNavigate();
 
    function handleSubmit(e) {
       e.preventDefault();
@@ -20,13 +22,17 @@ export default function SignIn() {
       })
          .then((r) => r.json())
          .then((data) => setSignedIn(data.signedIn))
-         .then(console.log(signedIn));
-      // .then(navigate('./SignedIn'));
+         .then(console.log(signedIn))
+         .then(navigate('./SignedIn'));
    }
 
    return (
       <div
-         className="jumbotron jumbotron-fluid bg-white text-dark p-1"
+         className={
+            mode === 'light'
+               ? 'jumbotron jumbotron-fluid bg-white text-dark p-1'
+               : 'jumbotron jumbotron-fluid bg-black text-light p-1'
+         }
          id="signupForm"
       >
          <br />

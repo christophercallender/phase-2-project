@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, useNavigate, Outlet } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
+import { StateContext } from './context';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { Navbar, Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import applecore from './media/Apple Core.png';
 import applecoregif from './media/Apple Core.gif';
 import applecoregifdark from './media/Apple Core dark.gif';
@@ -7,12 +10,9 @@ import cartgray from './media/cartgray.png';
 import cartwhite from './media/cartwhite.png';
 import buttondark from './media/buttondark.png';
 import buttonlight from './media/buttonlight.png';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Container } from 'react-bootstrap';
 
 export default function App() {
-   const [search, setSearch] = useState('');
-   const [mode, setMode] = useState('light');
+   const { search, setSearch, mode, setMode } = useContext(StateContext);
    const navigate = useNavigate();
    const navStyle = ({ isActive }) => isActive
          ? {color: 'white', textDecoration: 'none', margin: '10px'}
