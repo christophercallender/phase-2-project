@@ -1,21 +1,34 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { StateContext } from '../context';
 import { v4 as uuid } from 'uuid';
 import { useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
-   const [users, setUsers] = useState([]);
-   const [username, setUsername] = useState('');
-   const [password, setPassword] = useState('');
-   const [first, setFirst] = useState('');
-   const [last, setLast] = useState('');
-   const [street, setStreet] = useState('');
-   const [city, setCity] = useState('');
-   const [state, setState] = useState('');
-   const [zip, setZip] = useState('');
-   const [email, setEmail] = useState('');
-   const [phone, setPhone] = useState('');
-   const { mode } = useContext(StateContext);
+   const {
+      users,
+      setUsers,
+      username,
+      setUsername,
+      password,
+      setPassword,
+      first,
+      setFirst,
+      last,
+      setLast,
+      street,
+      setStreet,
+      city,
+      setCity,
+      state,
+      setState,
+      zip,
+      setZip,
+      email,
+      setEmail,
+      phone,
+      setPhone,
+      mode,
+   } = useContext(StateContext);
    const navigate = useNavigate();
 
    function handleSubmit(e) {
@@ -41,7 +54,21 @@ export default function SignUp() {
       })
          .then((r) => r.json())
          .then((data) => setUsers([...users, data]))
-         .then(navigate('src/routes/SignedUp'));
+         // .then(
+         //    console.log(
+         //       username,
+         //       password,
+         //       first,
+         //       last,
+         //       street,
+         //       city,
+         //       state,
+         //       zip,
+         //       email,
+         //       phone
+         //    )
+         // );
+         .then(navigate('./SignedUp'));
    }
 
    return (

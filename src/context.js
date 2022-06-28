@@ -7,6 +7,20 @@ function StateProvider({ children }) {
    const [mode, setMode] = useState('light');
    const [rerender, setRerender] = useState(false);
 
+   const [users, setUsers] = useState([]);
+   const [first, setFirst] = useState('');
+   const [last, setLast] = useState('');
+   const [street, setStreet] = useState('');
+   const [city, setCity] = useState('');
+   const [state, setState] = useState('');
+   const [zip, setZip] = useState('');
+   const [email, setEmail] = useState('');
+   const [phone, setPhone] = useState('');
+
+   const [username, setUsername] = useState('');
+   const [password, setPassword] = useState('');
+   const [signedIn, setSignedIn] = useState(false);
+
    function handleHeart(product) {
       fetch(`http://localhost:3000/products/${product.id}`, {
          method: 'PATCH',
@@ -43,6 +57,30 @@ function StateProvider({ children }) {
             handleAddToCart,
             rerender,
             setRerender,
+            users,
+            setUsers,
+            username,
+            setUsername,
+            password,
+            setPassword,
+            first,
+            setFirst,
+            last,
+            setLast,
+            street,
+            setStreet,
+            city,
+            setCity,
+            state,
+            setState,
+            zip,
+            setZip,
+            email,
+            setEmail,
+            phone,
+            setPhone,
+            signedIn,
+            setSignedIn,
          }}
       >
          {children}

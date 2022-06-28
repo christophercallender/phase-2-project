@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { StateContext } from '../context';
 
-export default function SignedIn({ first }) {
-   const { mode } = useContext(StateContext);
+export default function SignedIn() {
+   const { first, mode } = useContext(StateContext);
 
    return (
       <div

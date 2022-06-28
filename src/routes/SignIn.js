@@ -1,12 +1,17 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { StateContext } from '../context';
 import { useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
-   const [username, setUsername] = useState('');
-   const [password, setPassword] = useState('');
-   const [signedIn, setSignedIn] = useState(false);
-   const { mode } = useContext(StateContext);
+   const {
+      signedIn,
+      setSignedIn,
+      username,
+      setUsername,
+      password,
+      setPassword,
+      mode,
+   } = useContext(StateContext);
    const navigate = useNavigate();
 
    function handleSubmit(e) {
@@ -22,7 +27,7 @@ export default function SignIn() {
       })
          .then((r) => r.json())
          .then((data) => setSignedIn(data.signedIn))
-         .then(console.log(signedIn))
+         // .then(console.log(signedIn, username, password));
          .then(navigate('./SignedIn'));
    }
 

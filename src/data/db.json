@@ -285,17 +285,30 @@
       "phone": "phone"
     },
     {
-      "id": "76d396c0-0c0a-4e04-b088-97e7920e8a35",
+      "id": "182cf501-04e5-40b7-bfb8-c48772d230c2",
       "username": "Christopher",
       "password": "Christopher",
       "first": "Christopher",
-      "last": "Christopher",
-      "street": "Christopher",
-      "city": "Christopher",
-      "state": "Christopher",
-      "zip": "Christopher",
-      "email": "Christopher",
-      "phone": "Christopher"
+      "last": "Callender",
+      "street": "1 Infinite Loop",
+      "city": "Cupertino",
+      "state": "California",
+      "zip": "95014",
+      "email": "christopher@applecore.com",
+      "phone": "555-555-5555"
+    },
+    {
+      "id": "6413af48-17a4-4c79-aaf5-d2af56d39072",
+      "username": "Christopher",
+      "password": "Christopher",
+      "first": "Christopher",
+      "last": "Callender",
+      "street": "1 Infinite Loop",
+      "city": "Cupertino",
+      "state": "California",
+      "zip": "95014",
+      "email": "christopher@applecore.com",
+      "phone": "555-555-5555"
     }
   ],
   "status": [

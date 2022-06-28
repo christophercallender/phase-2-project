@@ -1,19 +1,20 @@
 import React, { useContext } from 'react';
 import { StateContext } from '../context';
-import { Container, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 
-export default function SignedUp({
-   username,
-   first,
-   last,
-   street,
-   city,
-   state,
-   zip,
-   email,
-   phone,
-}) {
-   const { mode } = useContext(StateContext);
+export default function SignedUp() {
+   const {
+      username,
+      first,
+      last,
+      street,
+      city,
+      state,
+      zip,
+      email,
+      phone,
+      mode,
+   } = useContext(StateContext);
 
    return (
       <div
