@@ -10,7 +10,6 @@ export default function SignIn() {
       setCurrentUser,
       password,
       setPassword,
-      rerender,
       mode,
    } = useContext(StateContext);
    const navigate = useNavigate();
@@ -18,7 +17,7 @@ export default function SignIn() {
    useEffect(() => {
       setUsername('');
       setPassword('');
-   }, [rerender]);
+   }, [setUsername, setPassword]);
 
    function handleSignIn(e) {
       e.preventDefault();
