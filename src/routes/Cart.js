@@ -64,10 +64,10 @@ export default function Cart() {
                               <img
                                  src={deletebutton}
                                  alt="delete button"
-                                 width="95%"
+                                 width="100%"
                               />
                            </button>
-                           <a
+                           <button
                               style={{
                                  border: 'none',
                                  background: 'none',
@@ -83,7 +83,7 @@ export default function Cart() {
                                  alt="amazon button"
                                  width="100%"
                               />
-                           </a>
+                           </button>
                         </Container>
                      </Card>
                      <br />

@@ -44,28 +44,16 @@ export default function SignedUp() {
                   <td>{`${username}`}</td>
                </tr>
                <tr>
-                  <td>First: </td>
-                  <td>{`${first}`}</td>
+                  <td>Name: </td>
+                  <td>{`${first} ${last}`}</td>
                </tr>
                <tr>
-                  <td>Last: </td>
-                  <td>{`${last}`}</td>
-               </tr>
-               <tr>
-                  <td>Street: </td>
+                  <td>Address: </td>
                   <td>{`${street}`}</td>
                </tr>
                <tr>
-                  <td>City: </td>
-                  <td>{`${city}`}</td>
-               </tr>
-               <tr>
-                  <td>State: </td>
-                  <td>{`${state}`}</td>
-               </tr>
-               <tr>
-                  <td>Zip: </td>
-                  <td>{`${zip}`}</td>
+                  <td></td>
+                  <td>{`${city}, ${state} ${zip}`}</td>
                </tr>
                <tr>
                   <td>Email: </td>

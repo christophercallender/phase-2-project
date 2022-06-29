@@ -107,7 +107,7 @@
       "details": "3.5GH 8-core Intel Xeon W processor (up to 2.5GHz 28-core Intel Xeon W processor), Turbo Boost up to 4.0GHz, 32GB (4x8GB) of DDR4 ECC memory (up to 1.5TB (12x128GB) of DDR4 ECC memory), Radeon Pro W5500X with 8GB of GDDR6 memory (up to Two Radeon Pro W6800X Duo with 64GB of GDDR6 memory each), 512GB SSD storage (up to 8TB SSD storage), Rack mounting rails (ships in separate box), Magic Mouse, Magic Keyboard with Numeric, Keypad - US English",
       "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-pro-rack-2021-gallery1?wid=2000&hei=1272&fmt=jpeg&qlt=95&.v=1626378543000",
       "price": "$6,499",
-      "heart": true,
+      "heart": false,
       "inCart": false
     },
     {
@@ -267,7 +267,7 @@
       "details": "Full-range driver and dual passive radiators for deep bass and crisp high frequencies, Custom acoustic waveguide for a 360º sound field, Acoustically transparent fabric, Computational audio for real-time tuning, Four-microphone design for far-field Siri, Multiroom audio with AirPlay 2, Stereo pair capable",
       "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-spacegray-202110_FV1?wid=934&hei=440&fmt=jpeg&qlt=95&.v=1633086020000",
       "price": "$99",
-      "heart": true,
+      "heart": false,
       "inCart": false
     }
   ],
@@ -283,6 +283,19 @@
       "zip": "zip",
       "email": "email",
       "phone": "phone"
+    },
+    {
+      "id": "d76f17f9-9cfe-4a37-b83e-7414aeaaca14",
+      "username": "Christopher",
+      "password": "Christopher",
+      "first": "Christopher",
+      "last": "Callender",
+      "street": "1 Infinite Loop",
+      "city": "Cupertino",
+      "state": "California",
+      "zip": "95014",
+      "email": "christopher@applecore.com",
+      "phone": "555-555-5555"
     }
   ],
   "status": [
