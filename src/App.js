@@ -12,7 +12,8 @@ import buttondark from './media/buttondark.png';
 import buttonlight from './media/buttonlight.png';
 
 export default function App() {
-   const { search, setSearch, mode, setMode } = useContext(StateContext);
+   const { search, setSearch, mode, setMode, currentUser } =
+      useContext(StateContext);
    const navigate = useNavigate();
    const navStyle = ({ isActive }) => isActive
          ? {color: 'white', textDecoration: 'none', margin: '10px'}
@@ -64,7 +65,7 @@ export default function App() {
                   Sign Up
                </NavLink>
                <NavLink style={navStyle} to="/routes/SignIn">
-                  Sign In
+                  {currentUser ? currentUser : 'Sign In'}
                </NavLink>
                &nbsp;
                <input

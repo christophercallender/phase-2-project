@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { StateContext } from '../context';
 
 export default function SignedIn() {
-   const { first, mode } = useContext(StateContext);
+   const { currentUser, mode } = useContext(StateContext);
 
    return (
       <div
@@ -18,7 +18,7 @@ export default function SignedIn() {
             You have successfully signed in!
          </p>
          <br />
-         <h2 className=" text-center">Welcome back, {first}!</h2>
+         <h2 className=" text-center">Welcome back, {currentUser}!</h2>
          <br />
          <br />
          <br />

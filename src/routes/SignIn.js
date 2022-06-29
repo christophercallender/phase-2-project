@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
    const {
-      signedIn,
-      setSignedIn,
       username,
       setUsername,
+      setCurrentUser,
       password,
       setPassword,
+      rerender,
       mode,
    } = useContext(StateContext);
    const navigate = useNavigate();
@@ -17,7 +17,7 @@ export default function SignIn() {
    useEffect(() => {
       setUsername('');
       setPassword('');
-   }, []);
+   }, [rerender]);
 
    function handleSubmit(e) {
       e.preventDefault();
@@ -27,11 +27,11 @@ export default function SignIn() {
             'Content-Type': 'application/json',
          },
          body: JSON.stringify({
-            signedIn: !signedIn,
+            currentUser: username,
          }),
       })
          .then((r) => r.json())
-         .then((data) => setSignedIn(data.signedIn))
+         .then((data) => setCurrentUser(data.currentUser))
          .then(navigate('/routes/SignedIn'));
    }
 

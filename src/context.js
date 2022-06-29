@@ -18,8 +18,8 @@ function StateProvider({ children }) {
    const [phone, setPhone] = useState('');
 
    const [username, setUsername] = useState('');
+   const [currentUser, setCurrentUser] = useState('');
    const [password, setPassword] = useState('');
-   const [signedIn, setSignedIn] = useState(false);
 
    function handleHeart(product) {
       fetch(`http://localhost:3000/products/${product.id}`, {
@@ -61,6 +61,8 @@ function StateProvider({ children }) {
             setUsers,
             username,
             setUsername,
+            currentUser,
+            setCurrentUser,
             password,
             setPassword,
             first,
@@ -79,8 +81,6 @@ function StateProvider({ children }) {
             setEmail,
             phone,
             setPhone,
-            signedIn,
-            setSignedIn,
          }}
       >
          {children}
