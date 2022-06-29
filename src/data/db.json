@@ -283,25 +283,12 @@
       "zip": "zip",
       "email": "email",
       "phone": "phone"
-    },
-    {
-      "id": "d76f17f9-9cfe-4a37-b83e-7414aeaaca14",
-      "username": "Christopher",
-      "password": "Christopher",
-      "first": "Christopher",
-      "last": "Callender",
-      "street": "1 Infinite Loop",
-      "city": "Cupertino",
-      "state": "California",
-      "zip": "95014",
-      "email": "christopher@applecore.com",
-      "phone": "555-555-5555"
     }
   ],
   "status": [
     {
       "id": 1,
-      "currentUser": ""
+      "currentUser": "Christopher"
     }
   ]
 }

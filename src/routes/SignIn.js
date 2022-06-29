@@ -122,7 +122,7 @@ export default function SignIn() {
                </form>
             ) : (
                <form>
-                  <p className="display-6 text-center">Sign Out</p>
+                  <p className="display-6 text-center">Account Settings</p>
                   <br />
                   <div className="form-group row justify-content-center">
                      <div className="text-center">
