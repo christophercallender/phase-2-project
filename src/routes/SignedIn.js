@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { StateContext } from '../context';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function SignedIn() {
    const { currentUser, mode } = useContext(StateContext);

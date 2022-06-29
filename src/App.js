@@ -61,9 +61,11 @@ export default function App() {
                <NavLink style={navStyle} to="/routes/TVandHome">
                   TV & Home
                </NavLink>
-               <NavLink style={navStyle} to="/routes/SignUp">
-                  Sign Up
-               </NavLink>
+               {currentUser !== '' ? null : (
+                  <NavLink style={navStyle} to="/routes/SignUp">
+                     Sign Up
+                  </NavLink>
+               )}
                <NavLink style={navStyle} to="/routes/SignIn">
                   {currentUser ? currentUser : 'Sign In'}
                </NavLink>

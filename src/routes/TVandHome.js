@@ -4,7 +4,7 @@ import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 export default function TVandHome() {
    const [products, setProducts] = useState([]);
-   const { search, handleHeart, handleAddToCart, rerender } =
+   const { search, handleHeart, handleCart, rerender } =
       useContext(StateContext);
 
    useEffect(() => {
@@ -55,7 +55,7 @@ export default function TVandHome() {
                                     ? 'secondary'
                                     : 'outline-secondary'
                               }
-                              onClick={() => handleAddToCart(product)}
+                              onClick={() => handleCart(product)}
                            >
                               {product.inCart ? 'In Cart' : 'Add to Cart'}
                            </Button>

@@ -258,7 +258,7 @@
       "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/apple-tv-4k-hero-select-202104?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1619139498000",
       "price": "$179",
       "heart": false,
-      "inCart": true
+      "inCart": false
     },
     {
       "id": 27,
@@ -283,51 +283,12 @@
       "zip": "zip",
       "email": "email",
       "phone": "phone"
-    },
-    {
-      "id": "ded588c4-7309-409d-816f-6d7462cc831e",
-      "username": "Christopher",
-      "password": "Christopher",
-      "first": "Christopher",
-      "last": "Christopher",
-      "street": "Christopher",
-      "city": "Christopher",
-      "state": "Christopher",
-      "zip": "Christopher",
-      "email": "Christopher",
-      "phone": "Christopher"
-    },
-    {
-      "id": "1a824546-c900-4c70-96a0-bb9693470985",
-      "username": "Christopher",
-      "password": "Christopher",
-      "first": "Christopher",
-      "last": "Christopher",
-      "street": "Christopher",
-      "city": "Christopher",
-      "state": "Christopher",
-      "zip": "Christopher",
-      "email": "Christopher",
-      "phone": "Christopher"
-    },
-    {
-      "id": "9c22c763-6fb3-4860-a5ea-12565267cbcb",
-      "username": "Christopher",
-      "password": "Christopher",
-      "first": "Christopher",
-      "last": "Christopher",
-      "street": "Christopher",
-      "city": "Christopher",
-      "state": "Christopher",
-      "zip": "Christopher",
-      "email": "Christopher",
-      "phone": "Christopher"
     }
   ],
   "status": [
     {
       "id": 1,
-      "currentUser": "Christopher"
+      "currentUser": ""
     }
   ]
 }

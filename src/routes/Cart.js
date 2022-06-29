@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { StateContext } from '../context';
-import { Container, Card, Col, Row, Button } from 'react-bootstrap';
+import { Container, Card, Col, Row } from 'react-bootstrap';
 import amazonbutton from '../media/amazonbutton.png';
+import deletebutton from '../media/deletebutton.png';
 
 export default function Cart() {
    const [products, setProducts] = useState([]);
-   const { search, mode, handleHeart, handleAddToCart, rerender } =
+   const { search, mode, handleHeart, handleCart, rerender } =
       useContext(StateContext);
 
    useEffect(() => {
@@ -53,13 +54,24 @@ export default function Cart() {
                            </Card.Text>
                         </Container>
                         <Container className="d-flex justify-content-between">
-                           <Button
-                              variant={'white'}
-                              onClick={() => handleAddToCart(product)}
+                           <button
+                              style={{
+                                 border: 'none',
+                                 background: 'none',
+                              }}
+                              onClick={() => handleCart(product)}
                            >
-                              {product.inCart ? 'Remove' : 'Add to Cart'}
-                           </Button>
-                           <a
+                              <img
+                                 src={deletebutton}
+                                 alt="delete button"
+                                 width="100%"
+                              />
+                           </button>
+                           <button
+                              style={{
+                                 border: 'none',
+                                 background: 'none',
+                              }}
                               href={`https://www.amazon.com/s?k=${
                                  product.title + product.model
                               }`}
@@ -71,7 +83,7 @@ export default function Cart() {
                                  alt="amazon button"
                                  width="100%"
                               />
-                           </a>
+                           </button>
                         </Container>
                      </Card>
                      <br />

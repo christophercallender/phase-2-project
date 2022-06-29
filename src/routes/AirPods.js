@@ -4,12 +4,8 @@ import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 export default function AirPods() {
    const [products, setProducts] = useState([]);
-   const {
-      search,
-      handleHeart,
-      handleAddToCart,
-      rerender
-   } = useContext(StateContext);
+   const { search, handleHeart, handleCart, rerender } =
+      useContext(StateContext);
 
    useEffect(() => {
       fetch('http://localhost:3000/products')
@@ -55,7 +51,7 @@ export default function AirPods() {
                                     ? 'secondary'
                                     : 'outline-secondary'
                               }
-                              onClick={() => handleAddToCart(product)}
+                              onClick={() => handleCart(product)}
                            >
                               {product.inCart ? 'In Cart' : 'Add to Cart'}
                            </Button>

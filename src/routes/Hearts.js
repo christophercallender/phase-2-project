@@ -4,7 +4,7 @@ import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 export default function Hearts() {
    const [products, setProducts] = useState([]);
-   const { search, mode, handleHeart, handleAddToCart, rerender } =
+   const { search, mode, handleHeart, handleCart, rerender } =
       useContext(StateContext);
 
    useEffect(() => {
@@ -58,7 +58,7 @@ export default function Hearts() {
                                     ? 'secondary'
                                     : 'outline-secondary'
                               }
-                              onClick={() => handleAddToCart(product)}
+                              onClick={() => handleCart(product)}
                            >
                               {product.inCart ? 'In Cart' : 'Add to Cart'}
                            </Button>

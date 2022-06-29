@@ -33,7 +33,7 @@ function StateProvider({ children }) {
       }).then(setRerender(!rerender));
    }
 
-   function handleAddToCart(product) {
+   function handleCart(product) {
       fetch(`http://localhost:3000/products/${product.id}`, {
          method: 'PATCH',
          headers: {
@@ -54,7 +54,7 @@ function StateProvider({ children }) {
             mode,
             setMode,
             handleHeart,
-            handleAddToCart,
+            handleCart,
             rerender,
             setRerender,
             users,

@@ -6,6 +6,7 @@ export default function SignIn() {
    const {
       username,
       setUsername,
+      currentUser,
       setCurrentUser,
       password,
       setPassword,
@@ -19,7 +20,7 @@ export default function SignIn() {
       setPassword('');
    }, [rerender]);
 
-   function handleSubmit(e) {
+   function handleSignIn(e) {
       e.preventDefault();
       fetch(`http://localhost:3000/status/1`, {
          method: 'PATCH',
@@ -35,6 +36,22 @@ export default function SignIn() {
          .then(navigate('/routes/SignedIn'));
    }
 
+   function handleSignOut(e) {
+      e.preventDefault();
+      fetch(`http://localhost:3000/status/1`, {
+         method: 'PATCH',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({
+            currentUser: '',
+         }),
+      })
+         .then((r) => r.json())
+         .then((data) => setCurrentUser(data.currentUser))
+         .then(navigate('/routes/AppleCore'));
+   }
+
    return (
       <div
          className={
@@ -46,57 +63,86 @@ export default function SignIn() {
       >
          <br />
          <div className="container">
-            <form>
-               <p className="display-6 text-center">Sign In</p>
-               <br />
-               <div className="form-group row justify-content-center">
-                  <label htmlFor="Username" className="col-md-2 col-form-label">
-                     Username
-                  </label>
-                  <div className="col-md-4">
-                     <input
-                        type="text"
-                        className="form-control"
-                        id="Username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                     />
-                  </div>
-               </div>
-               <br />
-               <div className="form-group row justify-content-center">
-                  <label htmlFor="Password" className="col-md-2 col-form-label">
-                     Password
-                  </label>
-                  <div className="col-md-4">
-                     <input
-                        type="Password"
-                        className="form-control"
-                        id="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                     />
-                  </div>
-               </div>
-               <br />
-               <div className="form-group row justify-content-center">
-                  <label
-                     htmlFor="Submit"
-                     className="col-md-2 col-form-label"
-                  ></label>
-                  <div className="col-md-4">
-                     <button
-                        type="submit"
-                        className="btn btn-outline-secondary"
-                        onClick={(e) => handleSubmit(e)}
+            {currentUser === '' ? (
+               <form>
+                  <p className="display-6 text-center">Sign In</p>
+                  <br />
+                  <div className="form-group row justify-content-center">
+                     <label
+                        htmlFor="Username"
+                        className="col-md-2 col-form-label"
                      >
-                        Submit
-                     </button>
+                        Username
+                     </label>
+                     <div className="col-md-4">
+                        <input
+                           type="text"
+                           className="form-control"
+                           id="Username"
+                           value={username}
+                           onChange={(e) => setUsername(e.target.value)}
+                        />
+                     </div>
                   </div>
-               </div>
-               <br />
-               <br />
-            </form>
+                  <br />
+                  <div className="form-group row justify-content-center">
+                     <label
+                        htmlFor="Password"
+                        className="col-md-2 col-form-label"
+                     >
+                        Password
+                     </label>
+                     <div className="col-md-4">
+                        <input
+                           type="Password"
+                           className="form-control"
+                           id="Password"
+                           value={password}
+                           onChange={(e) => setPassword(e.target.value)}
+                        />
+                     </div>
+                  </div>
+                  <br />
+                  <div className="form-group row justify-content-center">
+                     <label
+                        htmlFor="Submit"
+                        className="col-md-2 col-form-label"
+                     ></label>
+                     <div className="col-md-4">
+                        <button
+                           type="submit"
+                           className="btn btn-outline-secondary"
+                           onClick={(e) => handleSignIn(e)}
+                        >
+                           Sign In
+                        </button>
+                     </div>
+                  </div>
+                  <br />
+                  <br />
+               </form>
+            ) : (
+               <form>
+                  <p className="display-6 text-center">Sign Out</p>
+                  <br />
+                  <div className="form-group row justify-content-center">
+                     <div className="text-center">
+                        <button
+                           type="submit"
+                           className="btn btn-outline-secondary"
+                           onClick={(e) => handleSignOut(e)}
+                        >
+                           Sign Out
+                        </button>
+                        <br />
+                        <br /> <br />
+                        <br /> <br />
+                        <br /> <br />
+                        <br />
+                     </div>
+                  </div>
+               </form>
+            )}
          </div>
       </div>
    );
