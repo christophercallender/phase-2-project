@@ -8,7 +8,7 @@ export default function Price() {
       useContext(StateContext);
 
    useEffect(() => {
-      fetch('http://localhost:3000/products')
+      fetch('https://applecore.herokuapp.com/products')
          .then((r) => r.json())
          .then((data) =>
             setProducts(
