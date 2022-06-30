@@ -8,7 +8,7 @@ export default function AppleCore() {
       useContext(StateContext);
 
    useEffect(() => {
-      fetch('https://applecore.herokuapp.com/products')
+      fetch('https://applecore2.herokuapp.com/products')
          .then((r) => r.json())
          .then((data) => setProducts(data.sort((a, b) => a.title < b.title)));
    }, [rerender]);

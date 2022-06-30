@@ -8,7 +8,7 @@ export default function Watch() {
       useContext(StateContext);
 
    useEffect(() => {
-      fetch('https://applecore.herokuapp.com/products')
+      fetch('https://applecore2.herokuapp.com/products')
          .then((r) => r.json())
          .then((data) => setProducts(data));
    }, [rerender]);
