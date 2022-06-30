@@ -22,7 +22,7 @@ function StateProvider({ children }) {
    const [password, setPassword] = useState('');
 
    function handleHeart(product) {
-      fetch(`https://applecore2.herokuapp.com/products/${product.id}`, {
+      fetch(`http://localhost:3000/products/${product.id}`, {
          method: 'PATCH',
          headers: {
             'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ function StateProvider({ children }) {
    }
 
    function handleCart(product) {
-      fetch(`https://applecore2.herokuapp.com/products/${product.id}`, {
+      fetch(`http://localhost:3000/products/${product.id}`, {
          method: 'PATCH',
          headers: {
             'Content-Type': 'application/json',

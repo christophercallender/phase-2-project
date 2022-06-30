@@ -21,7 +21,7 @@ export default function SignIn() {
 
    function handleSignIn(e) {
       e.preventDefault();
-      fetch(`https://applecore2.herokuapp.com/status/1`, {
+      fetch(`http://localhost:3000/status/1`, {
          method: 'PATCH',
          headers: {
             'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export default function SignIn() {
 
    function handleSignOut(e) {
       e.preventDefault();
-      fetch(`https://applecore2.herokuapp.com/status/1`, {
+      fetch(`http://localhost:3000/status/1`, {
          method: 'PATCH',
          headers: {
             'Content-Type': 'application/json',
