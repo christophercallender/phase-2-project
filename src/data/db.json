@@ -187,8 +187,8 @@
       "details": "A15 Bionic chip, New 6-core CPU with 2 performance and 4 efficiency cores, New 4-core GPU, New 16-core Neural Engine",
       "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-blue-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1645572386470",
       "price": "$799",
-      "heart": false,
-      "inCart": false
+      "heart": true,
+      "inCart": true
     },
     {
       "id": 20,
@@ -237,8 +237,8 @@
       "details": "Custom high-excursion Apple driver, Custom high dynamic range amplifier, Active Noise Cancellation, Transparency mode, Vent system for pressure equalization, Spatial audio with dynamic head tracking, Adaptive EQ",
       "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000",
       "price": "$249",
-      "heart": false,
-      "inCart": false
+      "heart": true,
+      "inCart": true
     },
     {
       "id": 25,
@@ -247,8 +247,8 @@
       "details": "Apple-designed dynamic driver, Active Noise Cancellation, Transparency mode, Spatial audio with dynamic head tracking, Adaptive EQ",
       "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-spacegray-202011?wid=470&hei=556&fmt=png-alpha&.v=1604709508000",
       "price": "$549",
-      "heart": false,
-      "inCart": false
+      "heart": true,
+      "inCart": true
     },
     {
       "id": 26,

@@ -33,7 +33,7 @@ export default function SignUp() {
 
    function handleSubmit(e) {
       e.preventDefault();
-      fetch('http://localhost:3000/users', {
+      fetch('https://applecore2.herokuapp.com/users', {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json',

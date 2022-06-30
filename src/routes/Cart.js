@@ -10,7 +10,7 @@ export default function Cart() {
       useContext(StateContext);
 
    useEffect(() => {
-      fetch('http://localhost:3000/products')
+      fetch('https://applecore2.herokuapp.com/products')
          .then((r) => r.json())
          .then((data) => setProducts(data));
    }, [rerender]);
