@@ -34,7 +34,7 @@ function StateProvider({ children }) {
       })
          .then((r) => r.json())
          .then((data) => {
-            setProducts(data);
+            setProducts([...products, data]);
          });
    }
 
@@ -50,7 +50,7 @@ function StateProvider({ children }) {
       })
          .then((r) => r.json())
          .then((data) => {
-            setProducts(data);
+            setProducts([...products, data]);
          });
    }
 
