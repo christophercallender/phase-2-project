@@ -32,9 +32,9 @@ function StateProvider({ children }) {
             heart: !product.heart,
          }),
       })
-         .then((r) => r.json())
-         .then((data) => {
-            setProducts([...products, data]);
+         .then(setRerender((rerender) => !rerender))
+         .then(() => {
+            console.log('rerendered');
          });
    }
 
@@ -48,9 +48,9 @@ function StateProvider({ children }) {
             inCart: !product.inCart,
          }),
       })
-         .then((r) => r.json())
-         .then((data) => {
-            setProducts([...products, data]);
+         .then(setRerender((rerender) => !rerender))
+         .then(() => {
+            console.log('rerendered');
          });
    }
 
@@ -58,14 +58,14 @@ function StateProvider({ children }) {
       //<SearchContext.Provider value={{ state, setState, function(s) }}>
       <StateContext.Provider
          value={{
+            handleHeart,
+            handleCart,
             products,
             setProducts,
             search,
             setSearch,
             mode,
             setMode,
-            handleHeart,
-            handleCart,
             rerender,
             setRerender,
             users,
