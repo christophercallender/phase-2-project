@@ -36,9 +36,11 @@ function StateProvider({ children }) {
          .then((data) => {
             setProducts(
                products.map((product) => {
-                  product.id === data.id
-                     ? { ...product, heart: data.heart }
-                     : product;
+                  if (product.id === data.id) {
+                     return { ...product, heart: data.heart };
+                  } else {
+                     return product;
+                  }
                })
             );
          });
@@ -58,9 +60,11 @@ function StateProvider({ children }) {
          .then((data) => {
             setProducts(
                products.map((product) => {
-                  product.id === data.id
-                     ? { ...product, inCart: data.inCart }
-                     : product;
+                  if (product.id === data.id) {
+                     return { ...product, inCart: data.inCart };
+                  } else {
+                     return product;
+                  }
                })
             );
          });
