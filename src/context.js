@@ -31,11 +31,7 @@ function StateProvider({ children }) {
          body: JSON.stringify({
             heart: !product.heart,
          }),
-      })
-         .then(setRerender((rerender) => !rerender))
-         .then(() => {
-            console.log('rerendered');
-         });
+      }).then(setRerender((rerender) => !rerender));
    }
 
    function handleCart(product) {
@@ -47,11 +43,7 @@ function StateProvider({ children }) {
          body: JSON.stringify({
             inCart: !product.inCart,
          }),
-      })
-         .then(setRerender((rerender) => !rerender))
-         .then(() => {
-            console.log('rerendered');
-         });
+      }).then(setRerender((rerender) => !rerender));
    }
 
    return (

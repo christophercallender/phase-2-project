@@ -9,7 +9,10 @@ export default function AppleCore() {
    useEffect(() => {
       fetch('https://applecore2.herokuapp.com/products')
          .then((r) => r.json())
-         .then((data) => setProducts(data.sort((a, b) => a.title < b.title)));
+         .then((data) => setProducts(data.sort((a, b) => a.title < b.title)))
+         .then(() => {
+            console.log('rerendered');
+         });
    }, [rerender]);
 
    return (
