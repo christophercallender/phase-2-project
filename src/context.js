@@ -34,9 +34,14 @@ function StateProvider({ children }) {
       })
          .then((r) => r.json())
          .then((data) => {
-            console.log(data);
+            setProducts(
+               products.map((product) => {
+                  product.id === data.id
+                     ? { ...product, heart: data.heart }
+                     : product;
+               })
+            );
          });
-      // .then(setRerender((rerender) => !rerender));
    }
 
    function handleCart(product) {
@@ -51,9 +56,14 @@ function StateProvider({ children }) {
       })
          .then((r) => r.json())
          .then((data) => {
-            console.log(data);
+            setProducts(
+               products.map((product) => {
+                  product.id === data.id
+                     ? { ...product, inCart: data.inCart }
+                     : product;
+               })
+            );
          });
-      // .then(setRerender((rerender) => !rerender));
    }
 
    return (
