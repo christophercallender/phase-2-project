@@ -6,7 +6,6 @@ function StateProvider({ children }) {
    const [products, setProducts] = useState([]);
    const [search, setSearch] = useState('');
    const [mode, setMode] = useState('light');
-   // const [rerender, setRerender] = useState(false);
 
    const [users, setUsers] = useState([]);
    const [first, setFirst] = useState('');
@@ -36,11 +35,9 @@ function StateProvider({ children }) {
          .then((data) => {
             setProducts(
                products.map((product) => {
-                  if (product.id === data.id) {
-                     return { ...product, heart: data.heart };
-                  } else {
-                     return product;
-                  }
+                  return product.id === data.id
+                     ? { ...product, heart: data.heart }
+                     : product;
                })
             );
          });
@@ -60,11 +57,9 @@ function StateProvider({ children }) {
          .then((data) => {
             setProducts(
                products.map((product) => {
-                  if (product.id === data.id) {
-                     return { ...product, inCart: data.inCart };
-                  } else {
-                     return product;
-                  }
+                  return product.id === data.id
+                     ? { ...product, inCart: data.inCart }
+                     : product;
                })
             );
          });
@@ -82,8 +77,6 @@ function StateProvider({ children }) {
             setSearch,
             mode,
             setMode,
-            // rerender,
-            // setRerender,
             users,
             setUsers,
             username,

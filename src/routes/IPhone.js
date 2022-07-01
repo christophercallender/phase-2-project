@@ -3,8 +3,7 @@ import { StateContext } from '../context';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 export default function IPhone() {
-   const [products, setProducts] = useState([]);
-   const { search, handleHeart, handleCart, rerender } =
+   const { products, setProducts, search, handleHeart, handleCart } =
       useContext(StateContext);
 
    useEffect(() => {

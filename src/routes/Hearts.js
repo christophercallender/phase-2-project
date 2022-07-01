@@ -3,8 +3,7 @@ import { StateContext } from '../context';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 export default function Hearts() {
-   const [products, setProducts] = useState([]);
-   const { search, mode, handleHeart, handleCart, rerender } =
+   const { products, setProducts, search, mode, handleHeart, handleCart } =
       useContext(StateContext);
 
    useEffect(() => {

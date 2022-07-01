@@ -5,8 +5,7 @@ import amazonbutton from '../media/amazonbutton.png';
 import deletebutton from '../media/deletebutton.png';
 
 export default function Cart() {
-   const [products, setProducts] = useState([]);
-   const { search, mode, handleHeart, handleCart, rerender } =
+   const { products, setProducts, search, mode, handleHeart, handleCart } =
       useContext(StateContext);
 
    useEffect(() => {
