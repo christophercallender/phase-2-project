@@ -31,7 +31,11 @@ function StateProvider({ children }) {
          body: JSON.stringify({
             heart: !product.heart,
          }),
-      });
+      })
+         .then((r) => r.json())
+         .then((data) => {
+            setProducts(data);
+         });
    }
 
    function handleCart(product) {
@@ -43,7 +47,11 @@ function StateProvider({ children }) {
          body: JSON.stringify({
             inCart: !product.inCart,
          }),
-      });
+      })
+         .then((r) => r.json())
+         .then((data) => {
+            setProducts(data);
+         });
    }
 
    return (
