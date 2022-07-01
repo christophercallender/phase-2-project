@@ -3,17 +3,14 @@ import { StateContext } from '../context';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 export default function AppleCore() {
-   const { products, setProducts, search, handleHeart, handleCart, rerender } =
+   const { products, setProducts, search, handleHeart, handleCart } =
       useContext(StateContext);
 
    useEffect(() => {
       fetch('https://applecore2.herokuapp.com/products')
          .then((r) => r.json())
-         .then((data) => setProducts(data.sort((a, b) => a.title < b.title)))
-         .then(() => {
-            console.log('rerendered');
-         });
-   }, [rerender]);
+         .then((data) => setProducts(data.sort((a, b) => a.title < b.title)));
+   }, []);
 
    return (
       <Container fluid align="center">

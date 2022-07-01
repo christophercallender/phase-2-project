@@ -6,7 +6,7 @@ function StateProvider({ children }) {
    const [products, setProducts] = useState([]);
    const [search, setSearch] = useState('');
    const [mode, setMode] = useState('light');
-   const [rerender, setRerender] = useState(false);
+   // const [rerender, setRerender] = useState(false);
 
    const [users, setUsers] = useState([]);
    const [first, setFirst] = useState('');
@@ -82,8 +82,8 @@ function StateProvider({ children }) {
             setSearch,
             mode,
             setMode,
-            rerender,
-            setRerender,
+            // rerender,
+            // setRerender,
             users,
             setUsers,
             username,
