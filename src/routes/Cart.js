@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { StateContext } from '../context';
 import { Container, Card, Col, Row } from 'react-bootstrap';
 import amazonbutton from '../media/amazonbutton.png';
