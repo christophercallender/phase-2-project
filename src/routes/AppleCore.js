@@ -3,8 +3,7 @@ import { StateContext } from '../context';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 export default function AppleCore() {
-   const [products, setProducts] = useState([]);
-   const { search, handleHeart, handleCart, rerender } =
+   const { products, setProducts, search, handleHeart, handleCart, rerender } =
       useContext(StateContext);
 
    useEffect(() => {

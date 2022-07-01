@@ -3,6 +3,7 @@ import { useState, createContext } from 'react';
 const StateContext = createContext();
 
 function StateProvider({ children }) {
+   const [products, setProducts] = useState([]);
    const [search, setSearch] = useState('');
    const [mode, setMode] = useState('light');
    const [rerender, setRerender] = useState(false);
@@ -49,6 +50,8 @@ function StateProvider({ children }) {
       //<SearchContext.Provider value={{ state, setState, function(s) }}>
       <StateContext.Provider
          value={{
+            products,
+            setProducts,
             search,
             setSearch,
             mode,
