@@ -18,7 +18,7 @@ export default function Price() {
                )
             )
          );
-   }, []);
+   }, [setProducts]);
 
    return (
       <Container fluid align="center">

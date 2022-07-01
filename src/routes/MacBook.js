@@ -10,7 +10,7 @@ export default function MacBook() {
       fetch('https://applecore2.herokuapp.com/products')
          .then((r) => r.json())
          .then((data) => setProducts(data));
-   }, []);
+   }, [setProducts]);
 
    return (
       <Container fluid align="center">

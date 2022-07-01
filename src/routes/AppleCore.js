@@ -10,7 +10,7 @@ export default function AppleCore() {
       fetch('https://applecore2.herokuapp.com/products')
          .then((r) => r.json())
          .then((data) => setProducts(data.sort((a, b) => a.title < b.title)));
-   }, []);
+   }, [setProducts]);
 
    return (
       <Container fluid align="center">
