@@ -12,7 +12,7 @@ export default function Cart() {
       fetch('https://applecore2.herokuapp.com/products')
          .then((r) => r.json())
          .then((data) => setProducts(data));
-   }, [rerender]);
+   }, []);
 
    return (
       <Container fluid align="center">
