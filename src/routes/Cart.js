@@ -2,7 +2,6 @@ import React, { useEffect, useContext } from 'react';
 import { StateContext } from '../context';
 import { Container, Card, Col, Row } from 'react-bootstrap';
 import amazonbutton from '../media/amazonbutton.png';
-import deletebutton from '../media/deletebutton.png';
 
 export default function Cart() {
    const { products, setProducts, search, mode, handleHeart, handleCart } =
