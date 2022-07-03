@@ -55,18 +55,17 @@ export default function Cart() {
                         <Container className="d-flex justify-content-between">
                            <button
                               style={{
+                                 color: 'darkorange',
+                                 fontWeight: 'bold',
                                  border: 'none',
                                  background: 'none',
                               }}
                               onClick={() => handleCart(product)}
                            >
-                              <img
-                                 src={deletebutton}
-                                 alt="delete button"
-                                 width="100%"
-                              />
+                              Delete
                            </button>
-                           <button
+                           &nbsp;&nbsp;
+                           <a
                               style={{
                                  border: 'none',
                                  background: 'none',
@@ -82,7 +81,7 @@ export default function Cart() {
                                  alt="amazon button"
                                  width="100%"
                               />
-                           </button>
+                           </a>
                         </Container>
                      </Card>
                      <br />
