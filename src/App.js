@@ -31,7 +31,7 @@ export default function App() {
             background: mode === 'light' ? 'white' : 'black',
          }}
       >
-         <Navbar bg="dark" expand="sm-md-lg">
+         <Navbar bg="dark" expand="sm-md-lg" className="sticky-top">
             <Container>
                <NavLink to="/routes/AppleCore">
                   <img src={applecore} width={20} alt={'apple core logo'} />

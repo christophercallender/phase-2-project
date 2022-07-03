@@ -133,11 +133,6 @@ export default function SignIn() {
                         >
                            Sign Out
                         </button>
-                        <br />
-                        <br /> <br />
-                        <br /> <br />
-                        <br /> <br />
-                        <br />
                      </div>
                   </div>
                </form>
