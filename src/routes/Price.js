@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import { StateContext } from '../context';
-import { Container, Card, Col, Row, Button } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 export default function Price() {
    const { products, setProducts, search, mode, CardInfo } =
