@@ -3,7 +3,7 @@ import { StateContext } from '../context';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 export default function Price() {
-   const { products, setProducts, search, mode, handleHeart, handleCart } =
+   const { products, setProducts, search, mode, CardInfo } =
       useContext(StateContext);
 
    useEffect(() => {
@@ -39,39 +39,7 @@ export default function Price() {
                      product.model.toLowerCase().includes(search.toLowerCase())
                )
                .map((product) => (
-                  <Col key={product.id}>
-                     <Card style={{ width: '18rem', padding: '10px' }}>
-                        <Card.Img
-                           src={product.image}
-                           alt={product.title + product.model}
-                        />
-                        <br />
-                        <Container className="d-flex justify-content-between">
-                           <Card.Title>{product.title}</Card.Title>
-                           <Card.Text>{product.model}</Card.Text>
-                           <Card.Text
-                              style={{ cursor: 'pointer' }}
-                              onClick={() => handleHeart(product)}
-                           >
-                              {product.heart ? '♥' : '♡'}
-                           </Card.Text>
-                        </Container>
-                        <Container className="d-flex justify-content-between">
-                           <Card.Text>{product.price}</Card.Text>
-                           <Button
-                              variant={
-                                 product.inCart
-                                    ? 'secondary'
-                                    : 'outline-secondary'
-                              }
-                              onClick={() => handleCart(product)}
-                           >
-                              {product.inCart ? 'In Cart' : 'Add to Cart'}
-                           </Button>
-                        </Container>
-                     </Card>
-                     <br />
-                  </Col>
+                  <CardInfo product={product} />
                ))}
          </Row>
       </Container>

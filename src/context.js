@@ -1,4 +1,5 @@
 import { useState, createContext } from 'react';
+import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 
 const StateContext = createContext();
 
@@ -65,12 +66,86 @@ function StateProvider({ children }) {
          });
    }
 
+   function CardInfo({ product }) {
+      return (
+         <Col key={product.id}>
+            <Card style={{ width: '18rem', padding: '10px' }}>
+               <Card.Img
+                  src={product.image}
+                  alt={product.title + product.model}
+               />
+               <br />
+               <Container className="d-flex justify-content-between">
+                  <Card.Title>{product.title}</Card.Title>
+                  <Card.Text>{product.model}</Card.Text>
+                  <Card.Text
+                     style={{ cursor: 'pointer' }}
+                     onClick={() => handleHeart(product)}
+                  >
+                     {product.heart ? '♥' : '♡'}
+                  </Card.Text>
+               </Container>
+               <Container className="d-flex justify-content-between">
+                  <Card.Text>{product.price}</Card.Text>
+                  <Button
+                     variant={
+                        product.inCart ? 'secondary' : 'outline-secondary'
+                     }
+                     onClick={() => handleCart(product)}
+                  >
+                     {product.inCart ? 'In Cart' : 'Add to Cart'}
+                  </Button>
+               </Container>
+            </Card>
+            <br />
+         </Col>
+      );
+   }
+
+   function CardContainer({
+      keyword,
+      keyword2,
+      mismatch,
+      mismatch2,
+      mismatch3,
+   }) {
+      return (
+         <Container fluid align="center">
+            <Row sm={1} md={2} lg={3}>
+               {products
+                  .filter(
+                     (product) =>
+                        product.title
+                           .toLowerCase()
+                           .includes(search.toLowerCase()) ||
+                        product.model
+                           .toLowerCase()
+                           .includes(search.toLowerCase())
+                  )
+                  .filter(
+                     (product) =>
+                        (product.title.includes(keyword) ||
+                           product.title.includes(keyword2)) &&
+                        product.title !== mismatch &&
+                        product.title !== mismatch2 &&
+                        product.title !== mismatch3
+                  )
+                  .map((product) => (
+                     <CardInfo product={product} />
+                  ))}
+            </Row>
+         </Container>
+      );
+   }
+
    return (
       //<SearchContext.Provider value={{ state, setState, function(s) }}>
       <StateContext.Provider
          value={{
             handleHeart,
             handleCart,
+            CardInfo,
+            CardContainer,
             products,
             setProducts,
             search,
