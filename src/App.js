@@ -71,8 +71,11 @@ export default function App() {
                </NavLink>
                &nbsp;
                <input
+                  style={{
+                     borderRadius: '5px',
+                  }}
                   type="text"
-                  placeholder="Search..."
+                  placeholder=" Search..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                />
