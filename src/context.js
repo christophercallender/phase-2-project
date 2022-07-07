@@ -1,5 +1,6 @@
 import { useState, createContext } from 'react';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
+import { v4 as uuid } from 'uuid';
 
 const StateContext = createContext();
 
@@ -131,7 +132,7 @@ function StateProvider({ children }) {
                         product.title !== mismatch3
                   )
                   .map((product) => (
-                     <CardInfo product={product} />
+                     <CardInfo key={uuid()} product={product} />
                   ))}
             </Row>
          </Container>
